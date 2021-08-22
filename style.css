@@ -1,133 +1,217 @@
-/*custom font*/
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
-
-/*basic reset*/
-* {margin: 0; padding: 0;}
+* {
+    margin: 0;
+    padding: 0
+}
 
 html {
-	height: 100%;
-	/*Image only BG fallback*/
-	
-	/*background = gradient + image pattern combo*/
-	background: 
-		linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+    height: 100%
 }
 
-body {
-	font-family: montserrat, arial, verdana;
+p {
+    color: grey
 }
-/*form styles*/
+
+#heading {
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold
+}
+
 #msform {
-	width: 400px;
-	margin: 50px auto;
-	text-align: center;
-	position: relative;
+    text-align: center;
+    position: relative;
+    margin-top: 20px
 }
+
 #msform fieldset {
-	background: white;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-	padding: 20px 30px;
-	box-sizing: border-box;
-	width: 80%;
-	margin: 0 10%;
-	
-	/*stacking fieldsets above each other*/
-	position: relative;
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
 }
-/*Hide all except first fieldset*/
+
+.form-card {
+    text-align: left
+}
+
 #msform fieldset:not(:first-of-type) {
-	display: none;
+    display: none
 }
-/*inputs*/
-#msform input, #msform textarea {
-	padding: 15px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	margin-bottom: 10px;
-	width: 100%;
-	box-sizing: border-box;
-	font-family: montserrat;
-	color: #000;
-	font-size: 13px;
+
+#msform input,
+#msform textarea {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px
 }
-/*buttons*/
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #673AB7;
+    outline-width: 0
+}
+
 #msform .action-button {
-	width: 120px;
-	background: transparent;
-	font-weight: bold;
-	color: #000;
-	border: 1px solid #000;
-	border-radius: 5px;
-	cursor: pointer;
-	padding: 10px 5px;
-	margin: 10px 5px;
+    width: 100px;
+    background: transparent;
+    font-weight: bold;
+    color: #000;
+    border: 3px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
 }
-#msform .action-button:hover, #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #131313;
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: #311B92
 }
-/*headings*/
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 3px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #000000
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
 .fs-title {
-	font-size: 16px;
-	text-transform: uppercase;
-	color: #000;
-	margin-bottom: 10px;
-  font-weight: bold;
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left
 }
-.fs-subtitle {
-	font-weight: normal;
-	font-size: 12.5px;
-	color: #666;
-	margin-bottom: 20px;
+
+.purple-text {
+    color: #000;
+    font-weight: normal
 }
-/*progressbar*/
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.fieldlabels {
+    color: gray;
+    text-align: left
+}
+
 #progressbar {
-	margin-bottom: 30px;
-	overflow: hidden;
-	/*CSS counters to number the steps*/
-	counter-reset: step;
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
 }
+
+#progressbar .active {
+    color: #000
+}
+
 #progressbar li {
-	list-style-type: none;
-	color: white;
-	text-transform: uppercase;
-	font-size: 8px;
-	width: 33.33%;
-	float: left;
-	position: relative;
+    list-style-type: none;
+    font-size: 15px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400
 }
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f13e"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f030"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
 #progressbar li:before {
-	content: counter(step);
-	counter-increment: step;
-	width: 20px;
-	line-height: 20px;
-	display: block;
-	font-size: 10px;
-	color: #333;
-	background: white;
-	border-radius: 3px;
-	margin: 0 auto 5px auto;
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
 }
-/*progressbar connectors*/
+
 #progressbar li:after {
-	content: '';
-	width: 100%;
-	height: 2px;
-	background: white;
-	position: absolute;
-	left: -50%;
-	top: 9px;
-	z-index: -1; /*put it behind the numbers*/
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
 }
-#progressbar li:first-child:after {
-	/*connector not needed before the first step*/
-	content: none; 
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #000
 }
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
-	background: #000;
-	color: white;
-  font-weight: bold;
+
+.progress {
+    height: 20px
+}
+
+.progress-bar {
+    background-color: #000
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
 }
