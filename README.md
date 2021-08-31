@@ -1,2 +1,2 @@
 # clothier
-Onboarding Form for Clothier MVP
+Supplier List for Clothier MVP
